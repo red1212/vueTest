@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: 'build.js'  //打包后的文件名称
   },
   module: {
     rules: [
@@ -76,14 +76,14 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: true,  //单页面跳转都指向index.html
     noInfo: true,
     overlay: true
   },
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map'			//使用eval打包生成干净完整的source-map这时生成的JS具有性能安全的隐患
 }
 
 if (process.env.NODE_ENV === 'production') {
